@@ -100,7 +100,7 @@ static int  Create (vlc_object_t *p_this)
                 int voiceIndex = var_InheritInteger(p_this, "sapi-voice");
                 if (voiceIndex > - 1)
                 {
-                    if (voiceIndex <= ulCount) {
+                    if (voiceIndex < ulCount) {
                         hr = cpEnum->Item(voiceIndex, &cpVoiceToken);
                         if (SUCCEEDED(hr)) {
                             hr = p_sys->cpVoice->SetVoice(cpVoiceToken);
